@@ -1,0 +1,45 @@
+header {
+  background-color: 	#DCDCDC;
+}
+
+
+.main-nav ul{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item a {
+  color: black;
+}
+
+.logo {
+  display: block;
+  margin: 15px auto 30px;
+  width: 180px;
+}
+
+footer  {
+  background-color: 	#DCDCDC;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-tmbd {
+  display: block;
+  margin: 15px auto 30px;
+  width: 180px;
+}
+
+.footer-nombres{
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
