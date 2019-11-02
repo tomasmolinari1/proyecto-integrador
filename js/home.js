@@ -11,7 +11,7 @@ window.onload= function () {
     var titulo = ""
     var img_src = ""
     var serie = ""
-    var urlFija = "sacar de la consigna"
+    var urlFija = "https://image.tmdb.org/t/p/original/"
     for (var i = 0; i < dataTMBD.results.length; i++) {
       console.log (dataTMBD.results[i].name);
 
@@ -33,6 +33,8 @@ window.onload= function () {
     return response.json();
   })
   .then(function(dataTMBD) {
+      console.log(dataTMBD);
+
 
     var popularContainer = document.querySelector(".mejor-puntaje")
     for (var i = 0; i < dataTMBD.results.length; i++) {
