@@ -1,4 +1,6 @@
+
 window.onload= function () {
+  //api de series populares
   var apiKey ="81abb78b34be12fc4620b0a001276f5a"
 
   fetch ("https://api.themoviedb.org/3/tv/popular?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US&page=1")
@@ -27,7 +29,7 @@ window.onload= function () {
     }
   })
 
-
+  // api de series con mejor puntaje
   fetch ("https://api.themoviedb.org/3/tv/top_rated?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US&page=1")
   .then(function(response) {
     return response.json();
