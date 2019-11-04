@@ -1,51 +1,87 @@
 
+
+
+
 window.onload= function () {
   //api de series populares
-  var apiKey ="81abb78b34be12fc4620b0a001276f5a"
+  var apiKey ="81abb78b34be12fc4620b0a001276f5a";
+  var urlFija = "https://image.tmdb.org/t/p/original/";
 
-  fetch ("https://api.themoviedb.org/3/tv/popular?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US&page=1")
-  .then(function(response) {
-    return response.json();
-  })
+  function queryTMDB(endpoint) {
+    return fetch ("https://api.themoviedb.org/3/tv/" + endpoint + "?api_key=" + apiKey + "&language=en-US&page=1")
+      .then(function(response) {
+        return response.json();
+      })
+  }
+  function createItemHtml(clase, titulo, imagen) {
+    var serie = '<article class="'+ clase + '">'
+    serie +=      '<h2>'+ titulo +'</h2>'
+    serie +=      '<img src="'+ imagen +'" alt="">'
+    serie +=  '</article>';
+
+    return serie;
+  }
+
+  queryTMDB("popular")
   .then(function(dataTMBD) {
-    console.log(dataTMBD);
+
     var popularContainer = document.querySelector(".populars")
     var titulo = ""
+      console.log(titulo);
     var img_src = ""
-    var serie = ""
-    var urlFija = "https://image.tmdb.org/t/p/original/"
+
     for (var i = 0; i < dataTMBD.results.length; i++) {
-      console.log (dataTMBD.results[i].name);
+
 
       titulo = dataTMBD.results[i].name
       img_src = urlFija + dataTMBD.results[i].poster_path
 
-      serie =   '<article class="">'
-      serie +=      '<h2>'+ titulo +'</h2>'
-      serie +=      '<img src="'+ img_src +'" alt="">'
-      serie +=  '</article>'
+      var serie = createItemHtml("populars-item", titulo, img_src);
 
       popularContainer.innerHTML += serie
     }
+    console.log(titulo);
   })
 
   // api de series con mejor puntaje
-  fetch ("https://api.themoviedb.org/3/tv/top_rated?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US&page=1")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(dataTMBD) {
-      console.log(dataTMBD);
+  queryTMDB("top_rated")
+  .then(function(topRatedData) {
+      console.log(topRatedData);
 
 
-    var popularContainer = document.querySelector(".mejor-puntaje")
-    for (var i = 0; i < dataTMBD.results.length; i++) {
-      console.log (dataTMBD.results[i].name);
+    var topRatedContainer = document.querySelector(".mejor-puntaje")
+    for (var i = 0; i < topRatedData.results.length; i++) {
+      const topRatedItem = topRatedData.results[i];
+      console.log (topRatedItem.name);
 
-      popularContainer.innerHTML
+      var itemTitle = topRatedItem.name
+      var img_src = urlFija + topRatedItem.poster_path
+
+      var serie = createItemHtml("mejor-puntaje-item", itemTitle, img_src);
+
+      topRatedContainer.innerHTML += serie
     }
 
   })
 
+  queryTMDB("airing_today")
+  .then(function(todayData) {
+      console.log(todayData);
+
+
+    var todayContainer = document.querySelector(".airing-today")
+    for (var i = 0; i < todayData.results.length; i++) {
+      const todayItem = todayData.results[i];
+      console.log (todayItem.name);
+
+      var itemTitle = todayItem.name
+      var img_src = urlFija + todayItem.poster_path
+
+      var serie = createItemHtml("airing-today-item", itemTitle, img_src);
+
+      todayContainer.innerHTML += serie
+    }
+
+  })
 
 }
