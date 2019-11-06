@@ -24,7 +24,7 @@ window.onload= function () {
 
   queryTMDB("popular")
   .then(function(dataTMBD) {
-
+    console.log(dataTMBD);
     var popularContainer = document.querySelector(".populars")
     var titulo = ""
       console.log(titulo);
