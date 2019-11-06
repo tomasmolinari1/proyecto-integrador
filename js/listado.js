@@ -4,6 +4,7 @@ window.addEventListener("load", function(){
   //api de series populares
   var apiKey ="81abb78b34be12fc4620b0a001276f5a";
   var urlFija = "https://image.tmdb.org/t/p/original/";
+  var urlGenero = "seriesPorGenero.html?idDeGenero=";
 
   function queryTMDB() {
     return fetch ("https://api.themoviedb.org/3/genre/tv/list?api_key=" + apiKey + "&language=en-US&page=1")
@@ -11,9 +12,9 @@ window.addEventListener("load", function(){
         return response.json();
       })
   }
-  function createItemHtml(clase, titulo) {
+  function createItemHtml(clase, titulo, id) {
     var genre = '<article class="'+ clase + '">'
-    genre +=      '<h2>'+ titulo +'</h2>'
+    genre +=      '<h2><a href="'+ urlGenero + id +'" >'+ titulo +'</a></h2>'
     genre +=  '</article>';
 
     return genre;
@@ -33,7 +34,7 @@ window.addEventListener("load", function(){
       titulo = dataTMBD.genres[i].name
 
 
-      genresContainer.innerHTML += createItemHtml("listado-generos-item", titulo);
+      genresContainer.innerHTML += createItemHtml("listado-generos-item", titulo, dataTMBD.genres[i].id);
     }
     console.log(titulo);
   })
