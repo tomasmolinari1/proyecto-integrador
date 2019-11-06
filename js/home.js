@@ -1,7 +1,5 @@
 
 
-
-
 window.onload= function () {
   //api de series populares
   var apiKey ="81abb78b34be12fc4620b0a001276f5a";
@@ -24,7 +22,7 @@ window.onload= function () {
 
   queryTMDB("popular")
   .then(function(dataTMBD) {
-
+    console.log(dataTMBD);
     var popularContainer = document.querySelector(".populars")
     var titulo = ""
       console.log(titulo);
@@ -36,7 +34,7 @@ window.onload= function () {
       titulo = dataTMBD.results[i].name
       img_src = urlFija + dataTMBD.results[i].poster_path
 
-      var serie = createItemHtml("populars-item", titulo, img_src);
+      var serie = createItemHtml("populars-item", titulo, img_src) ;
 
       popularContainer.innerHTML += serie
     }
