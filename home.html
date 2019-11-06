@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="css/proyecto.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="js/home.js"></script>
+      <script src="js/listado.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
   </head>
   <body>
 <header>
@@ -14,10 +18,21 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="home.html">Home <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="listado.html">Listado de géneros</a>
+        <button class="uk-button uk-button-default uk-float-left" type="button">Listado de Generos</button>
+        <div uk-dropdown="boundary: .boundary">
+            <ul class="uk-nav uk-dropdown-nav listado-generos uk-flex-column uk-text-center">
+                <!-- <li class="uk-active"><a href="#">Active</a></li>
+                <li><a href="#">Item</a></li>
+                <li class="uk-nav-header">Header</li>
+                <li><a href="#">Item</a></li>
+                <li><a href="#">Item</a></li>
+                <li class="uk-nav-divider"></li>
+                <li><a href="#">Item</a></li> -->
+            </ul>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="series.html">Series por género</a>
@@ -26,12 +41,57 @@
   </div>
 </nav>
 </header>
-<section class="populars">
+<section class="">
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid populars">
+        <!-- <li>
+            <div class="uk-panel">
+                <img src="images/slider1.jpg" alt="">
+                <div class="uk-position-center uk-panel"><h1>1</h1></div>
+            </div>
+        </li> -->
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
 
 </section>
-<section class="mejor-puntaje">
+<section class="">
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid populars mejor-puntaje">
+        <!-- <li>
+            <div class="uk-panel">
+                <img src="images/slider1.jpg" alt="">
+                <div class="uk-position-center uk-panel"><h1>1</h1></div>
+            </div>
+        </li> -->
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
 </section>
-<section class="airing-today">
+<section class="">
+  <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider>
+
+    <ul class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@m uk-grid airing-today ">
+        <!-- <li>
+            <div class="uk-panel">
+                <img src="images/slider1.jpg" alt="">
+                <div class="uk-position-center uk-panel"><h1>1</h1></div>
+            </div>
+        </li> -->
+    </ul>
+
+    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+
+</div>
 </section>
 <br>
 <footer>

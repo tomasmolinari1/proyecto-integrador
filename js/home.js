@@ -12,10 +12,10 @@ window.onload= function () {
       })
   }
   function createItemHtml(clase, titulo, imagen) {
-    var serie = '<article class="'+ clase + '">'
+    var serie = '<li class="'+ clase + '">'
     serie +=      '<h2>'+ titulo +'</h2>'
     serie +=      '<img src="'+ imagen +'" alt="">'
-    serie +=  '</article>';
+    serie +=  '</li>';
 
     return serie;
   }

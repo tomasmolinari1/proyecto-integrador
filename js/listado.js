@@ -13,9 +13,9 @@ window.addEventListener("load", function(){
       })
   }
   function createItemHtml(clase, titulo, id) {
-    var genre = '<article class="'+ clase + '">'
+    var genre = '<li class="'+ clase + '">'
     genre +=      '<h2><a href="'+ urlGenero + id +'" >'+ titulo +'</a></h2>'
-    genre +=  '</article>';
+    genre +=  '</li>';
 
     return genre;
   }
