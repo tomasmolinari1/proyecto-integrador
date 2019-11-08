@@ -1,0 +1,9 @@
+.populars-item h2 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.titulos-home{
+  color: white;
+}

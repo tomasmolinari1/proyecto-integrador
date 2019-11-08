@@ -62,3 +62,7 @@ footer  {
 .airing-today-item img {
   max-width: 100%;
 }
+
+.uk-search uk-search-default form input{
+  color: green;
+}
