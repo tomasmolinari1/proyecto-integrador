@@ -1,7 +1,6 @@
 window.addEventListener("load", function(){
 
 
-  //api de series populares
   var apiKey ="81abb78b34be12fc4620b0a001276f5a";
   var urlFija = "https://image.tmdb.org/t/p/original/";
   var urlGenero = "seriesPorGenero.html?idDeGenero=";
@@ -23,7 +22,7 @@ window.addEventListener("load", function(){
   queryTMDB()
   .then(function(dataTMBD) {
     console.log(dataTMBD);
-    var genresContainer = document.querySelector(".listado-generos")
+    var seriesGeneroContainer = document.querySelector(".listado-generos")
     var titulo = ""
       console.log(titulo);
 
@@ -34,7 +33,7 @@ window.addEventListener("load", function(){
       titulo = dataTMBD.genres[i].name
 
 
-      genresContainer.innerHTML += createItemHtml("listado-generos-item", titulo, dataTMBD.genres[i].id);
+      seriesGeneroContainer.innerHTML += createItemHtml("series-genero-item", titulo, dataTMBD.genres[i].id);
     }
     console.log(titulo);
   })
