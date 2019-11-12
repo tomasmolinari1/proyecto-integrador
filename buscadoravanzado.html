@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="./buscadoravanzado.js"> </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+  </head>
+  <body>
+
+    <!-- inicio buscador -->
+    <form action="./buscadoravanzado.html"  method="get" class="uk-search uk-search-default">
+      <input id="year-input" class="uk-search-input" name="year" type="number" placeholder="Año de estreno">
+      <select id="con-genero" class="uk-select" name="with_genre">
+        <option value=""></option>
+        <option value="10759">Action &amp; Adventure</option>
+      </select>
+      <select id="sin-genero" class="uk-select" name="without_genre">
+        <option value=""></option>
+      </select>
+      <select id="orden" class="uk-select" name="order">
+        <option value=""></option>
+        <option value="vote_average.desc">vote_average.desc</option>
+        <option value="vote_average.asc">vote_average.asc</option>
+        <option value="first_air_date.desc">first_air_date.desc</option>
+        <option value="first_air_date.asc">first_air_date.asc</option>
+        <option value="popularity.desc">popularity.desc</option>
+        <option value="popularity.asc">popularity.asc</option>
+      </select>
+      <button type="submit" name="button">Buscar</button>
+    </form>
+    <!-- fin buscador -->
+
+
+    <!-- inicio listado -->
+    <ul class="results-buscador">
+
+    </ul>
+    <!-- fin listado -->
+  </body>
+</html>

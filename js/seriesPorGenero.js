@@ -24,7 +24,6 @@ window.addEventListener("load", function(){
     content += '<h2>' + data.name + '</h2>';
     content += '<img src="' + (data.poster_path ? urlFija + data.poster_path : 'images/cine.jpg') + '" width="">';
     content += '</li>';
-// content += '<img src="' + (data.poster_path ? urlFija + data.poster_path : 'images/cine.jpg') + '" width="100">';
     return content;
   }
 
