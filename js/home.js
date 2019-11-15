@@ -11,11 +11,15 @@ window.onload= function () {
         return response.json();
       })
   }
-  function createItemHtml(clase, titulo, imagen) {
+  function createItemHtml(clase, titulo, imagen, idSerie, nombreSerie) {
+
     var serie = '<li class="'+ clase + '">'
+    serie +=     '<a href="detalles.html?idSerie='+idSerie+'&nombreSerie='+nombreSerie+'" >'
     serie +=      '<h2>'+ titulo +'</h2>'
     serie +=      '<img src="'+ imagen +'" alt="">'
+    serie +=    '</a>'
     serie +=  '</li>';
+
 
     return serie;
   }
@@ -33,6 +37,7 @@ window.onload= function () {
 
       titulo = dataTMBD.results[i].name
       img_src = urlFija + dataTMBD.results[i].poster_path
+
 
       var serie = createItemHtml("populars-item", titulo, img_src) ;
 
