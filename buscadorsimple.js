@@ -10,7 +10,7 @@ window.onload= function () {
   queryTMDB(query)
   .then(function(dataTMBD){
     console.log(dataTMBD);
-    var resultsContainer = document.querySelector(".results-buscador")
+    var resultsContainer = document.querySelector("#results-buscador")
     var titulo = ""
     console.log(titulo);
 
@@ -37,10 +37,18 @@ window.onload= function () {
   function createItemHtml(clase, titulo, img_url) {
     var imagen = img_url ? urlFija + img_url : 'images/cine.jpg';
 
-    var result = '<li class="'+ clase + '">'
-    result +=      '<h2>'+ titulo +'</h2>'
-    result +=      '<img src="'+ imagen +'" alt="">'
-    result +=  '</li>';
+    var result = '<li>'
+    result = '<div class="uk-panel">'
+    result += '<img src="' + imagen + '">';
+    result += '</div>';
+    result += '</li>';
+
+    /*<li>
+        <div class="uk-panel">
+            <img src="images/slider1.jpg" alt="">
+            <div class="uk-position-center uk-panel"><h1>1</h1></div>
+        </div>
+    </li>*/
 
     return result;
   }
