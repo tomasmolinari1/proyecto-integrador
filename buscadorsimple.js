@@ -38,7 +38,8 @@ window.onload= function () {
     var imagen = img_url ? urlFija + img_url : 'images/cine.jpg';
 
     var result = '<li>'
-    result = '<div class="uk-panel">'
+    result += '<div class="uk-panel">'
+    result +=   '<h2>'+ titulo +'</h2>'
     result += '<img src="' + imagen + '">';
     result += '</div>';
     result += '</li>';
