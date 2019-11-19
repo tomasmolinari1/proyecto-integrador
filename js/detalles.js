@@ -13,6 +13,7 @@ fetch (url)
     .then(function (resultados) {
       console.log(resultados);
 
+
       var contenedorDetalleSerie = document.querySelector('.detalle-serie');
       var imgPath = `https://image.tmdb.org/t/p/original/${resultados.poster_path}`;
       var resenia = resultados.overview;
@@ -33,9 +34,25 @@ fetch (url)
 
       contenedorDetalleSerie.innerHTML = html
     })
-    .catch(function (errors) {
-      console.log(errors);
-    })
+
+    var urlTrailers = "https://api.themoviedb.org/3/tv/"+idSerie+"/videos?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US"
+      fetch (urlTrailers)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function (resultados) {
+          console.log(resultados);
+          var arrayKeys = resultados.results
+          var trailer = ''
+          for (var i = 0; i < arrayKeys.length; i++) {
+            console.log(arrayKeys[i].key);
+
+            trailer += '<iframe width="560" height="315" src="https://www.youtube.com/embed/'+arrayKeys[i].key+'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
+          }
+          document.querySelector(".trailers").innerHTML = trailer;
+       })
+
 // La página de detalle de la serie debe incluir al menos:
 // Título de la serie.
 // Géneros a los que pertenece.

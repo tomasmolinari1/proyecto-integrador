@@ -39,7 +39,7 @@ window.onload= function () {
 
     var result = '<li>'
     result += '<div class="uk-panel">'
-    result +=   '<h2>'+ titulo +'</h2>'
+    result += '<h2>'+ titulo +'</h2>'
     result += '<img src="' + imagen + '">';
     result += '</div>';
     result += '</li>';
