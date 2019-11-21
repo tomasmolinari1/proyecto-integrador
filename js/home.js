@@ -54,12 +54,12 @@ window.onload= function () {
     var topRatedContainer = document.querySelector(".mejor-puntaje")
     for (var i = 0; i < topRatedData.results.length; i++) {
       const topRatedItem = topRatedData.results[i];
-      console.log (topRatedItem.name);
+      console.log(topRatedItem.name);
 
       var itemTitle = topRatedItem.name
       var img_src = urlFija + topRatedItem.poster_path
 
-      var serie = createItemHtml("mejor-puntaje-item", itemTitle, img_src);
+      var serie = createItemHtml("mejor-puntaje-item", itemTitle, img_src, topRatedItem.id);
 
       topRatedContainer.innerHTML += serie
     }
@@ -79,7 +79,7 @@ window.onload= function () {
       var itemTitle = todayItem.name
       var img_src = urlFija + todayItem.poster_path
 
-      var serie = createItemHtml("airing-today-item", itemTitle, img_src);
+      var serie = createItemHtml("airing-today-item", itemTitle, img_src, todayItem.id);
 
       todayContainer.innerHTML += serie
     }

@@ -22,8 +22,8 @@ window.onload= function () {
   .then(function(dataTMBD){
     console.log(dataTMBD);
     var resultsContainer = document.querySelector("#results-buscador-avanzado")
-    var titulo = ""
-    console.log(titulo);
+    var titulo = "";
+
 
 
     for (var i = 0; i < dataTMBD.results.length; i++) {
@@ -32,22 +32,23 @@ window.onload= function () {
       titulo = dataTMBD.results[i].name
 
 
-      resultsContainer.innerHTML += createItemHtml("buscador-avanzado-item", titulo, dataTMBD.results[i].poster_path);
+      resultsContainer.innerHTML += createItemHtml("buscador-avanzado-item", titulo, dataTMBD.results[i].poster_path, dataTMBD.results[i].id);
       console.log(titulo);
 
 
     }
 
 
-  function createItemHtml(clase, titulo, img_url) {
+  function createItemHtml(clase, titulo, img_url, idSerie) {
     var imagen = img_url ? urlFija + img_url : 'images/cine.jpg';
 
     var result = '<li>'
     result += '<div class="uk-panel">'
+    result += '<a href="detalles.html?idSerie='+idSerie+'">'
     result +=   '<h2>'+ titulo +'</h2>'
     result += '<img src="' + imagen + '">';
     result += '</div>';
-    result += '</li>';
+    result += '</a></li>';
     return result
   }
 })

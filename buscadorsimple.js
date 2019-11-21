@@ -21,8 +21,9 @@ window.onload= function () {
       titulo = dataTMBD.results[i].name
 
 
-      resultsContainer.innerHTML += createItemHtml("buscador-simple-item", titulo, dataTMBD.results[i].poster_path);
+      resultsContainer.innerHTML += createItemHtml("buscador-simple-item", titulo, dataTMBD.results[i].poster_path, dataTMBD.results[i].id );
       console.log(titulo);
+
     }
 
   })
@@ -34,15 +35,15 @@ window.onload= function () {
         return response.json();
       })
   }
-  function createItemHtml(clase, titulo, img_url) {
+  function createItemHtml(clase, titulo, img_url, idSerie) {
     var imagen = img_url ? urlFija + img_url : 'images/cine.jpg';
-
     var result = '<li>'
     result += '<div class="uk-panel">'
+    result += '<a href="detalles.html?idSerie='+idSerie+'">'
     result += '<h2>'+ titulo +'</h2>'
     result += '<img src="' + imagen + '">';
     result += '</div>';
-    result += '</li>';
+    result += '</a></li>';
 
     /*<li>
         <div class="uk-panel">

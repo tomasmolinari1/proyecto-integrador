@@ -2,7 +2,7 @@ window.onload = function() {
 var queryString = new URLSearchParams(location.search);
 
 var idSerie = queryString.get('idSerie');
-var nombreSerie = queryString.get('nombreSerie');
+
 var urlFija = "https://image.tmdb.org/t/p/original/";
 
 function createItemHtml(clase, titulo, imagen, idSerie) {
@@ -16,7 +16,7 @@ function createItemHtml(clase, titulo, imagen, idSerie) {
 
   return serie;
 }
-console.log(idSerie, nombreSerie);
+
 
 var url = "https://api.themoviedb.org/3/tv/" + idSerie + "?api_key=81abb78b34be12fc4620b0a001276f5a&language=en-US";
 fetch (url)
@@ -35,7 +35,7 @@ fetch (url)
       var lenguaje = resultados.languages;
       var sinopsis = resultados.overview;
       var fechaDeEstreno = resultados.first_air_date;
-      var html = `<h1>${nombreSerie}</h1>`
+      var html = `<h1>${titulo}</h1>`
       html +=   `<img src="${imgPath}">`
       html +=  `<h2>${lenguaje}</h2>`
       html +=  `<h2>${sinopsis}</h2>`
@@ -82,7 +82,7 @@ fetch (url)
             var serie = createItemHtml("reco-items", titulo, img_src, resultados.results[i].id) ;
             recoContainer.innerHTML += serie
           }
-          console.log(titulo);
+
         })
 
 var sectionReco = document.querySelector(".sectionReco")
@@ -91,7 +91,7 @@ var recoBoton = document.getElementById("recomendacionesBoton")
   sectionReco.style.display = "block";
   console.log(sectionReco);
   console.log(recoBoton);
-  console.log(click);
+  
 }
 };
 
