@@ -1,10 +1,7 @@
-<<<<<<< Updated upstream
+
 
 window.addEventListener("load", function(){
-=======
-window.addEventListener('load', function() {
 
->>>>>>> Stashed changes
 
   var urlParams = new URLSearchParams(location.search);
 
@@ -16,12 +13,8 @@ window.addEventListener('load', function() {
   var urlFija = "https://image.tmdb.org/t/p/original/";
   var urlGenero = "seriesPorGenero.html?idDeGenero=";
 
-<<<<<<< Updated upstream
   var urlAPI = "https://api.themoviedb.org/3/discover/tv?api_key=" + apiKey +"&sort_by=popularity.desc&page=1&with_genres=" + idDeGenero
 
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
   function queryTMDB() {
     return fetch(urlAPI).then(function(response) { return response.json() })
   }
@@ -46,20 +39,8 @@ window.addEventListener('load', function() {
       body.innerHTML += createItemHtml("series-por-genero-item", dataTMBD.results[i]);
     }
   })
-=======
-  fetch('https://api.themoviedb.org/3/discover/tv?api_key=<<api_key>>&sort_by=popularity.desc&page=1&with_genres' + id +)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(myJson) {
-      console.log(myJson);
-    });
 
 
-})
 
-
-window.addEventListener('load',function () {
->>>>>>> Stashed changes
 
 })
